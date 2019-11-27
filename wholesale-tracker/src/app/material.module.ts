@@ -1,16 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
-  declarations: [
-    MatToolbarModule
-  ],
   imports: [
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule
   ],
-  providers: [],
-  bootstrap: []
+  exports: [
+    MatToolbarModule,
+    MatButtonModule
+  ]
+
 })
 export class MaterialModule { }
