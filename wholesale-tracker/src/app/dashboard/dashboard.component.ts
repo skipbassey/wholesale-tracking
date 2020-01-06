@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LeadService } from 'src/services/lead.service';
 
 export interface PeriodicElement {
   name: string;
@@ -31,9 +32,15 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(
+    private leadService: LeadService
+  ) { }
 
   ngOnInit() {
+    this.leadService.getAllLeads()
+      .subscribe(res => 
+        console.log(res))
   }
+
 
 }
