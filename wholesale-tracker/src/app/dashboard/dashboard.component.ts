@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class DashboardComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['Owner First Name', 'Owner Last Name', 'Address', 'City', 'State', 'Zip Code'];
   dataSource = ELEMENT_DATA;
 
   constructor(
