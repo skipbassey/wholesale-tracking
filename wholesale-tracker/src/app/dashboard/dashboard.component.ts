@@ -20,12 +20,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
     this.dataSource = new LeadDataSource(this.leadService);
+
     this.dataSource.loadLeads();
 
-    this.leadService.getAllLeads()
-      .subscribe(res => 
-        console.log(res))
+   
   }
-
 
 }

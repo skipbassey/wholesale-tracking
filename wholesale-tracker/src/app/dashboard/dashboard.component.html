@@ -1,45 +1,51 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div>
+  <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
+        The actual rendered columns are set as a property on the row definition" -->
+
     <!-- First Name Column -->
     <ng-container matColumnDef="Owner First Name">
       <th mat-header-cell *matHeaderCellDef> First Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.Items.Owner_First_Name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.Owner_First_Name.S}} </td>
     </ng-container>
-  
+
     <!-- Last Name Column -->
     <ng-container matColumnDef="Owner Last Name">
       <th mat-header-cell *matHeaderCellDef> Last Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.Items.Owner_Last_Name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.Owner_Last_Name.S}} </td>
     </ng-container>
-  
+
     <!-- Address Column -->
     <ng-container matColumnDef="Address">
       <th mat-header-cell *matHeaderCellDef> Address </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.Address.S}} </td>
     </ng-container>
-  
+
     <!-- City Column -->
     <ng-container matColumnDef="City">
       <th mat-header-cell *matHeaderCellDef> City </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.City.S}} </td>
     </ng-container>
 
     <!-- State Column -->
     <ng-container matColumnDef="State">
       <th mat-header-cell *matHeaderCellDef> State </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.State.S}} </td>
     </ng-container>
 
     <!-- Zip Code Column -->
     <ng-container matColumnDef="Zip Code">
       <th mat-header-cell *matHeaderCellDef> Zip Code </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.Zipcode.S}} </td>
     </ng-container>
-  
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  
+
+</div>

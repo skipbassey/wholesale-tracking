@@ -26,6 +26,10 @@ export class LeadDataSource implements DataSource<any> {
         this.loadingSubject.next(true);
 
         this.leadService.getAllLeads()
-            .subscribe(res => this.leadSubject.next(res))
+            .subscribe(res => {
+                console.log(res.Items)
+                this.leadSubject.next(res.Items)
+                this.loadingSubject.complete();
+            })
     }
 }
