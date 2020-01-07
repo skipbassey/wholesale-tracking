@@ -10,11 +10,11 @@ export class LeadService {
     constructor(private http: HttpClient) {}
 
     getAllLeads(): Observable<any> {
-        const url = 'https://mlxruy55n6.execute-api.us-east-1.amazonaws.com/default/getLead';
+        const url = 'https://jxz1ghkbcl.execute-api.us-east-1.amazonaws.com/default/getLeads';
 
         const httpOptions = {
             headers: new HttpHeaders({
-              'Content-Type':  'text/plain',
+              'Content-Type':  'application/json',
             })
           };        return this.http.get(url, httpOptions);
 
