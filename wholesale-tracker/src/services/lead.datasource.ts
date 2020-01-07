@@ -2,7 +2,7 @@ import { CollectionViewer, DataSource } from "@angular/cdk/collections";
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LeadService } from './lead.service';
 
-export class LessonsDataSource implements DataSource<any> {
+export class LeadDataSource implements DataSource<any> {
 
     private leadSubject = new BehaviorSubject<any[]>([]);
     private loadingSubject = new BehaviorSubject<boolean>(false);
