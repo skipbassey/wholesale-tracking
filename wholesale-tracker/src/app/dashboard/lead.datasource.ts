@@ -1,6 +1,6 @@
 import { CollectionViewer, DataSource } from "@angular/cdk/collections";
 import { BehaviorSubject, Observable } from 'rxjs';
-import { LeadService } from './lead.service';
+import { LeadService } from '../../services/lead.service';
 
 export class LeadDataSource implements DataSource<any> {
 
