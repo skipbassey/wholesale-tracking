@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
   MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
-  MatSortModule, MatTableModule
+  MatSortModule, MatTableModule, MatToolbarModule, MatButtonModule
 } from "@angular/material";
 
 @NgModule({
@@ -10,14 +10,18 @@ import {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   exports: [
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatButtonModule
   ]
 
 })
