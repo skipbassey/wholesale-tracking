@@ -6,10 +6,11 @@ export class LeadDataSource implements DataSource<any> {
 
     private leadSubject = new BehaviorSubject<any[]>([]);
     private loadingSubject = new BehaviorSubject<boolean>(false);
+    private countSubject = new BehaviorSubject<any>(0);
 
     public loading$ = this.loadingSubject.asObservable();
 
-    public count = new BehaviorSubject<number>(0)
+    public count = this.countSubject.asObservable();
 
     constructor(private leadService: LeadService) { }
 
@@ -31,7 +32,7 @@ export class LeadDataSource implements DataSource<any> {
                 console.log(res.Count)
                 this.leadSubject.next(res.Items);
                 this.loadingSubject.next(false);
-                this.count.next(res.Count);
+                this.countSubject.next(res.Count)
                 // this.leadService.totalLeadCount.next(res.Count)
             })
     }

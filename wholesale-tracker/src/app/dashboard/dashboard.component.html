@@ -48,6 +48,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [length]="dataSource.Count">
+  <mat-paginator [length]="dataSource.count | async">
 </mat-paginator>
 </div>
