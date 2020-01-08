@@ -9,6 +9,7 @@ export class LeadDataSource implements DataSource<any> {
 
     public loading$ = this.loadingSubject.asObservable();
 
+    public count = new BehaviorSubject<number>(0)
 
     constructor(private leadService: LeadService) { }
 
@@ -27,9 +28,11 @@ export class LeadDataSource implements DataSource<any> {
 
         this.leadService.getAllLeads()
             .subscribe(res => {
-                console.log(res.Items)
-                this.leadSubject.next(res.Items)
-                this.loadingSubject.complete();
+                console.log(res.Count)
+                this.leadSubject.next(res.Items);
+                this.loadingSubject.next(false);
+                this.count.next(res.Count);
+                // this.leadService.totalLeadCount.next(res.Count)
             })
     }
 }

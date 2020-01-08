@@ -22,7 +22,6 @@ export class DashboardComponent implements OnInit {
     this.dataSource = new LeadDataSource(this.leadService);
 
     this.dataSource.loadLeads();
-
    
   }
 
